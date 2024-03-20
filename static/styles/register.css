@@ -1,0 +1,72 @@
+.body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .container1 {
+    background: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    max-width: 600px;
+    min-height: 300px;
+  }
+  .form-container {
+    padding: 20px;
+    flex-grow: 1;
+    display: none; /* Initially hide the form */
+  }
+  .active {
+    display: block; /* Show the active form */
+  }
+  .side-panel {
+    background-color: #7a5cfa;
+    color: white;
+    padding: 20px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .side-panel button {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    cursor: pointer;
+    outline: none;
+  }
+  .side-panel button:focus,
+  .side-panel button:hover {
+    background-color: white;
+    color: #7a5cfa;
+  }
+  input, button.sign {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  button.sign {
+    background-color: #7a5cfa;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  button.sign:hover {
+    background-color: #6847e9;
+  }

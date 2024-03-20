@@ -1,0 +1,29 @@
+
+
+.error {
+    text-align: center;
+    width: 100%;
+    position: relative;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.error img {
+    max-width: 20%;
+    height: auto;
+}
+.error h1{
+  color: #6246EA;
+  font-family: 'Peace Sans', sans-serif;
+  font-size: 36px;
+}
+
+img,h1,p{
+margin-top: 2%;
+}
+
+.error p{
+
+}

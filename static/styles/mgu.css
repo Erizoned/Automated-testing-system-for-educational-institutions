@@ -1,0 +1,40 @@
+h2 {
+        font-family: 'Peace Sans', sans-serif;
+        color: #6246EA;
+        margin-bottom: 20px;
+    }
+
+    form {
+        background-color: #F0F0F0;
+        padding: 20px;
+        border-radius: 10px;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    div {
+        margin-bottom: 10px;
+    }
+
+    input[type="checkbox"] {
+        margin-right: 5px;
+    }
+
+    button {
+        background-color: #6246EA;
+        color: #FFFFFF;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    button:hover {
+        background-color: #5740D9;
+    }

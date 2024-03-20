@@ -1,0 +1,13 @@
+{% extends 'Quiz/dependencies.html' %}
+{% load static %}
+{% block content %}
+<head>
+     <link rel="stylesheet" href="{% static 'styles/add_subject.css' %}">
+</head>
+    <h2>Add subject</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+{% endblock %}

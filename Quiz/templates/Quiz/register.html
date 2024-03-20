@@ -1,0 +1,63 @@
+{% extends 'Quiz/dependencies.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <title>
+        Online Quiz
+    </title>
+     <link rel="stylesheet" href="{% static 'styles/register.css' %}">
+</head>
+<div class="body">
+    <div class="container1">
+        <div class="side-panel">
+            <h2>Hello</h2>
+            <p>If you have an account</p>
+            <button id="signIn">Sign in</button>
+            <p>If you don't have an account</p>
+            <button id="signUp">Sign up</button>
+        </div>
+
+        <div class="form-container" id="formSignIn">
+            <h2>Sign In</h2>
+            <form method="POST" action="{% url 'register' %}">
+                {% csrf_token %}
+                <p>Name:</p>
+                {{ login_form.username }}
+                <p>Password:</p>
+                {{ login_form.password }}
+                <button class="sign" type="submit" name="login">Sign in</button>
+            </form>
+        </div>
+
+        <div class="form-container" id="formSignUp">
+            <h2>Create Account</h2>
+            <form method="POST" action="{% url 'register' %}">
+                {% csrf_token %}
+                {% if register_form.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ register_form.errors }}
+                </div>
+                {% endif %}
+                <p>Name:</p>
+                {{ register_form.username }}
+                <p>Password:</p>
+                {{ register_form.password1 }}
+                <p>Confirm the password:</p>
+                {{ register_form.password2 }}
+                <button class="sign" type="submit" name="register">Sign up</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementById('signIn').addEventListener('click', function() {
+        document.getElementById('formSignIn').classList.add('active');
+        document.getElementById('formSignUp').classList.remove('active');
+    });
+
+    document.getElementById('signUp').addEventListener('click', function() {
+        document.getElementById('formSignUp').classList.add('active');
+        document.getElementById('formSignIn').classList.remove('active');
+    });
+</script>
+{% endblock %}

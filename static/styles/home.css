@@ -1,0 +1,101 @@
+body {
+
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* Заголовок */
+h1 {
+  color: #555;
+  font-weight: bold;
+  font-family: 'Peace Sans', sans-serif;
+}
+
+button {
+  background-color: #3D3D3D;
+  border-color: #3D3D3D;
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ffffff;
+  color: #3D3D3D;
+}
+
+form {
+  background-color: #F8F4FF;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  margin-bottom: 20px;
+}
+
+/* Стили для выпадающего списка */
+select {
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Карточка теста */
+.card {
+  transition: transform .2s; /* Анимация */
+  border: none;
+  border-radius: 10px;
+   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+
+}
+
+.card:hover {
+  transform: scale(1.05); /* Увеличиваем карточку при наведении */
+}
+
+.card-title {
+  color: #3D3D3D;
+  font-family: 'Peace Sans', sans-serif;
+}
+
+.card-body {
+  background-color: #F8F4FF
+
+}
+
+
+/* Кнопки */
+.btn-outline-primary {
+  border-color: #6246EA;
+  color: #6246EA;
+}
+
+.btn-outline-primary:hover {
+  background-color: #6246EA;
+  color: #ffffff;
+}
+/* кнопка */
+.btn-primary {
+  background-color: #3D3D3D;
+  border-color: #3D3D3D;
+}
+
+.btn-primary:hover {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #3D3D3D;
+}
+
+/* Стили для администратора */
+.card-footer {
+  background-color: #6246EA;
+  border-top: 1px solid #eaeaea;
+}
+
+/* Медиа запросы для адаптивного дизайна */
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 20px;
+  }
+}

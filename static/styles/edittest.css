@@ -1,0 +1,63 @@
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.main-header {
+    font-family: 'Peace Sans', sans-serif;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.main-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.main-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.main-form input[type="text"],
+.main-form select,
+.main-form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.save-button,
+.delete-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.save-button {
+    background-color: #6c5ce7;
+    color: white;
+}
+
+.delete-button {
+    background-color:  #3D3D3D;
+    color: white;
+}
+
+.save-button:hover {
+    background-color: #5e54d8;
+}
+
+.delete-button:hover {
+    background-color: #a4aeb9;
+}

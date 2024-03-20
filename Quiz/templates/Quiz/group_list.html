@@ -1,0 +1,17 @@
+{% extends 'Quiz/dependencies.html' %}
+{% load static %}
+{% block content %}
+<head>
+     <link rel="stylesheet" href="{% static 'styles/grouplist.css' %}">
+</head>
+    <h2>Group list</h2>
+    <ul>
+        {% for group in groups %}
+            <li>
+                {{ group.name }} ({{ group.year }})
+                - <a href="{% url 'manage_group_users' group.id %}">Users management</a>
+            </li>
+        {% endfor %}
+                        - <a href="{% url 'add_group' %}">Create group</a>
+    </ul>
+{% endblock %}

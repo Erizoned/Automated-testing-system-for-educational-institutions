@@ -1,0 +1,48 @@
+{% extends 'Quiz/dependencies.html' %}
+
+{% load static %}
+
+{% block head %}
+
+<link href="https://fonts.googleapis.com/css2?family=Peace+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<head>
+     <link rel="stylesheet" href="{% static 'styles/createtesrandq.css' %}">
+</head>
+<div class="container">
+    <div class="card">
+        <h2>Create test</h2>
+        <form method="post" action="{% url 'create_test' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_title">Name:</label>
+                {{ test_form.title }}
+            </div>
+            <div class="form-group">
+                <label for="id_description">Description:</label>
+                {{ test_form.description }}
+            </div>
+            <div class="form-group">
+                <label for="id_start_time">Time to start (HH:MM):</label>
+                {{ test_form.start_time }}
+            </div>
+            <div class="form-group">
+                <label for="id_end_time">Time to end (HH:ММ):</label>
+                {{ test_form.end_time }}
+            </div>
+            <div class="form-group">
+                <label for="id_subject">Subject:</label>
+                {{ test_form.subject }}
+            </div>
+            <div class="form-group">
+                <label for="id_group">Group:</label>
+                {{ test_form.group }}
+            </div>
+            <button type="submit" class="btn btn-primary">Save test</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

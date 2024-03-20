@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Peace+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+body, html {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #FFFFFF;
+  color: #3D3D3D;
+  margin: 0;
+  padding: 0;
+}
+
+.text {
+  font-size: 20px;
+}
+
+h1, h2, h3, .form-group label {
+  font-family: 'Peace Sans', sans-serif;
+}
+
+
+.form-group {
+  margin: 20px;
+  font-size: 20px;
+}
+
+.form-check-label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  padding-top: 3px;
+  font-size: 22px;
+  user-select: none;
+}
+
+.form-check-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Customize the label (the container) */
+.form-check-label {
+  background-color: #EDEDED;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* On mouse-over, add a grey background color */
+.form-check-label:hover {
+  background-color: #DDD;
+}
+
+/* When the radio button is checked, add a blue background */
+.form-check-input:checked ~ .form-check-label {
+  background-color: #6246EA;
+  color: white;
+}
+
+/* Style the submit button */
+button {
+  background-color: #6246EA;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+
+
+button:hover {
+  background-color: #5038D9;
+}
+
+
+.save-button,
+.delete-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.save-button {
+    background-color: #6c5ce7;
+    color: white;
+}
+
+.delete-button {
+    background-color:  #3D3D3D;
+    color: white;
+}
+
+.save-button:hover {
+    background-color: #5e54d8;
+}
+
+.delete-button:hover {
+    background-color: #a4aeb9;
+}

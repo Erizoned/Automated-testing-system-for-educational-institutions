@@ -1,0 +1,15 @@
+{% extends 'Quiz/dependencies.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'styles/home.css' %}">
+</head>
+    <section class="secmain">
+        <div id="body">
+            <h1> LOVEDU.KZ- </h1>
+            <p> Automated testing for educational institutions. Created for <br> convenient use by students and teachers</p>
+            <a href='{% url 'register' %}'><div class="start" > Start use</div></a>
+            <img src="{% static 'mainimg.png' %}" alt="">
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'Quiz/dependencies.html' %}
+{% load static %}
+{% block content %}
+<head>
+     <link rel="stylesheet" href="{% static 'styles/journal.css' %}">
+</head>
+  <h2>Journal</h2>
+
+  <form id="userSelectForm" method="GET" action="{% url 'journal' %}">
+    <label for="userSelect">Select User:</label>
+    <select id="userSelect" name="username">
+      {% for user in all_users %}
+        <option value="{{ user.username }}" {% if user.username == selected_username %}selected{% endif %}>
+          {{ user.username }}
+        </option>
+      {% endfor %}
+    </select>
+    <button type="submit">Show Journal</button>
+  </form>
+
+  {% if user_results %}
+    <h3>Results for {{ selected_username }}</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Test</th>
+          <th>Group</th>
+          <th>Subjects</th>
+          <th>Score</th>
+          <th>Time Taken</th>
+          <th>Date Taken</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for result in user_results %}
+          <tr>
+            <td>{{ result.test.title }}</td>
+            <td>{{ result.test.group.name }}</td>
+            <td>{{ result.test.subject.name }}</td>
+            <td>{{ result.score }}</td>
+            <td>{{ result.time_taken }}</td>
+            <td>{{ result.date_taken }}</td>
+            <td>
+              <a href="{% url 'view_student_answers' customuser_id=result.user.id test_id=result.test.id %}" class="save-button">View Answers</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No results available.</p>
+  {% endif %}
+
+  <script>
+    document.getElementById('userSelect').addEventListener('change', function() {
+      document.getElementById('userSelectForm').submit();
+    });
+  </script>
+{% endblock %}

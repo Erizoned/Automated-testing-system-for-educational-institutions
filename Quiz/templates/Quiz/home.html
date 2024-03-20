@@ -1,0 +1,45 @@
+{% extends 'Quiz/dependencies.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'styles/home.css' %}">
+</head>
+<form method="get" action="{% url 'home' %}">
+    <label for="subjectSelect">Choose subject:</label>
+    <select id="subjectSelect" name="subject_id">
+        <option value="">All subjects</option>
+        {% for subject in subjects %}
+            <option value="{{ subject.id }}" {% if subject.id == selected_subject_id %}selected{% endif %}>
+                {{ subject.name }}
+            </option>
+        {% endfor %}
+    </select>
+    <button type="submit">Filter</button>
+</form>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">My tests:</h1>
+    <div class="row">
+      {% if tests %}
+        {% for test in tests %}
+          <div class="col-md-4 mb-3">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">{{ test.title }}</h5>
+                <p class="subject-name">Subject: {{ test.subject.name }}</p> <!-- Добавлено название предмета -->
+                <a href="{% url 'start_test' test.id %}" class="btn btn-outline-primary">Start test</a>
+              </div>
+              {% if request.user.is_staff %}
+                <div class="card-footer">
+                  <a href="{% url 'publish_test' test.id %}" class="btn btn-primary">Publish</a>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p>Tests not found.</p>
+      {% endif %}
+    </div>
+</div>
+{% endblock %}

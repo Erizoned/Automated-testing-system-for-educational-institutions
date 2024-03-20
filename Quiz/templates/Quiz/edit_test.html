@@ -1,0 +1,25 @@
+{% extends 'Quiz/dependencies.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Peace+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'styles/edittest.css' %}">
+</head>
+<body>
+  <div class="form-container">
+    <h1 class="main-header">Edit Test: {{ test.title }}</h1>
+
+    <form method="post" action="" class="main-form">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="save-button">Save Changes</button>
+    </form>
+
+    <form method="post" action="{% url 'delete_test' test.id %}" class="delete-form">
+      {% csrf_token %}
+      <button type="submit" class="delete-button">Delete Test</button>
+    </form>
+  </div>
+</body>
+{% endblock %}

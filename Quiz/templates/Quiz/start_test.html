@@ -1,0 +1,18 @@
+{% extends 'Quiz/dependencies.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'styles/start.css' %}">
+</head>
+  <div id="content">
+  <h1>{{ test.title }}</h1>
+  <p>{{ test.description }}</p>
+        {% if not has_taken_test %}
+  <a href="{% url 'take_test' test.id %}" class="btn btn-primary">Start test</a>
+      {% endif %}
+      {% if has_taken_test %}
+      <a href="{% url 'show_test_results' test.id request.user.id %}" class="btn btn-secondary">Show results</a>
+      {% endif %}
+</div>
+
+{% endblock %}

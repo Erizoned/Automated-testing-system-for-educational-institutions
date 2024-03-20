@@ -1,0 +1,22 @@
+{% extends 'Quiz/dependencies.html' %}
+{% load static %}
+{% block content %}
+<head>
+     <link rel="stylesheet" href="{% static 'styles/mgu.css' %}">
+</head>
+<h2>Group management: {{ group.name }}</h2>
+<form method="post">
+    {% csrf_token %}
+    <div>
+        <label>Choose users to add to the group:</label>
+        {% for user in users %}
+            <div>
+                <input type="checkbox" name="users" value="{{ user.id }}"
+                       {% if group in user.custom_groups.all %} checked {% endif %}>
+                {{ user.username }}
+            </div>
+        {% endfor %}
+    </div>
+    <button type="submit">Save</button>
+</form>
+{% endblock %}

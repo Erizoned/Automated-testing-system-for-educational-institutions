@@ -1,0 +1,28 @@
+{% extends 'Quiz/dependencies.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'styles/add_group.css' %}">
+</head>
+<h2>Add Group</h2>
+<form method="post" class="custom-group-form">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="id_name">Name:</label>
+        {{ custom_group_form.name }}
+    </div>
+    <div class="form-group">
+        <label for="id_year">Year:</label>
+        {{ custom_group_form.year }}
+    </div>
+    <div class="form-group">
+        <label>Subjects:</label>
+        {% for checkbox in custom_group_form.subjects %}
+            <div>
+                {{ checkbox.tag }} {{ checkbox.choice_label }}
+            </div>
+        {% endfor %}
+    </div>
+    <button type="submit">Save</button>
+</form>
+{% endblock %}

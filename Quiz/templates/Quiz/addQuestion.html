@@ -1,0 +1,71 @@
+{% extends 'Quiz/dependencies.html' %}
+{% load static %}
+{% block content %}
+<head>
+     <link rel="stylesheet" href="{% static 'styles/createtesrandq.css' %}">
+</head>
+<div class="container">
+    <div class="card">
+        <h2>Добавление вопроса</h2>
+        <form method="post" action="" id="question-form">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Тип вопроса:</label>
+                {{ form.question_type }}
+            </div>
+            <div class="form-group">
+                <label>Вопрос:</label>
+                {{ form.question }}
+            </div>
+            <!-- Поля для вариантов ответов будут добавлены здесь динамически -->
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function updateFormFields() {
+        const form = document.getElementById('question-form');
+        const questionType = document.getElementById('id_question_type').value;
+        const mcFieldsContainer = document.getElementById('mc-fields-container');
+
+        // Удаляем предыдущие поля MC, если они есть
+        if (mcFieldsContainer) {
+            mcFieldsContainer.remove();
+        }
+
+        // Добавляем поля MC, если выбран соответствующий тип вопроса
+        if (questionType === 'MC') {
+            const mcFieldsHtml = `
+                <div id="mc-fields-container">
+                    <div class="form-group">
+                        <label>Опция 1:</label>
+                        {{ form.op1 }}
+                    </div>
+                    <div class="form-group">
+                        <label>Опция 2:</label>
+                        {{ form.op2 }}
+                    </div>
+                    <div class="form-group">
+                        <label>Опция 3:</label>
+                        {{ form.op3 }}
+                    </div>
+                    <div class="form-group">
+                        <label>Опция 4:</label>
+                        {{ form.op4 }}
+                    </div>
+                    <div class="form-group">
+                        <label>Правильный ответ:</label>
+                        {{ form.ans }}
+                    </div>
+                </div>
+            `;
+            form.insertAdjacentHTML('beforeend', mcFieldsHtml);
+        }
+    }
+
+    document.getElementById('id_question_type').addEventListener('change', updateFormFields);
+    window.onload = updateFormFields;
+</script>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% load static %}
+
+<head>
+    <title>
+        Online Quiz
+    </title>
+     <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <style>
+  .greet{
+    font-size: 18px;
+    color: #3D3D3D;
+    text-align: right;
+  }
+</style>
+</head>
+
+	<section class="secmain">
+
+  <div id="menu">
+      <p>LOVEDU.KZ</p>
+  <div class="separator">
+
+
+      <a class="nav-link" href="{% url 'home' %}"><span class="main" >Main</span></a>
+      <span>|</span>
+      {% if request.user.is_staff %}
+        <a class="nav-link" href="{% url 'create_test' %}"><span class="test">Test</span></a>
+    	<span>|</span>
+      {% endif %}
+
+       {% if request.user.is_staff %}
+          <a class="nav-link" href="{% url 'journal' %}"><span class="journal">Journal</span></a>
+     	<span>|</span>
+            <a class="nav-link" href="{% url 'add_subject' %}"><span class="journal">Subject</span></a>
+     	<span>|</span>
+                  <a class="nav-link" href="{% url 'group_list' %}"><span class="journal">Group</span></a>
+     	<span>|</span>
+      {% endif %}
+
+{% if not user.is_authenticated %}
+        <a class="nav-link" href='{% url 'register' %}'><span class="test">Login</span></a>
+      <span>|</span>
+      {% endif %}
+      {% if user.is_authenticated %}
+      <span class="greet">{{request.user}}</span>
+      {% endif %}
+  <span ><a  class="greet" href="{% url 'logout' %}">Logout</a></span>
+
+  </div>
+</div>
+</div>

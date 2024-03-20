@@ -1,0 +1,236 @@
+#menu {
+    display: flex;
+    align-items: center;
+}
+#menu p{
+    margin:   35px;
+    font-size: 19px;
+    color: #3D3D3D;
+}
+#menu p,
+#menu .separator {
+    margin-right:   100px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    color: #3D3D3D;
+}
+#menu .separator,
+#menu img {
+    margin-right:   600px;
+
+
+}
+
+#menu img{
+    position: relative;
+    top: 4px;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+}
+
+.separator span {
+    margin-right: 35px;
+    font-size: 19px;
+
+}
+.circle {
+    width: 5px;
+    height: 5px;
+    background-color: #3D3D3D;
+    border-radius: 50%;
+}
+
+.switch{
+    width: 70px;
+    height: 70px;
+}
+
+.separator .main{
+    color: #6246EA;
+}
+
+#body{
+    position: relative;
+    top: 105px;
+}
+
+#body h1{
+    margin-left: 50px;
+    font-size: 56px;
+    font-family: 'Peace Sans', sans-serif;
+    color: #3D3D3D;
+}
+
+#body p{
+    margin-left: 100px;
+    margin-top: 30px;
+    font-size: 19px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    color: #3D3D3D;
+}
+
+.start{
+    height: 50px;
+    width: 180px;
+    margin-top: 30px;
+    margin-left: 100px;
+    font-size: 19px;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #6246EA;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    line-height: 50px;
+}
+
+#body img{
+    position: relative;
+    float: right;
+    display: block;
+    top: -260px;
+    margin-right: 100px;
+
+}
+.secmain{
+    width: 100%;
+    height: 700px;
+    background-color: white;
+}
+.ahc{
+    width: 100%;
+    height: 500px;
+    background-color: #3D3D3D;
+}
+
+#blockach{
+    display: flex;
+    align-items: center;
+}
+
+#blockach div{
+    width: 240px;
+    height: 240px;
+    background-color: white;
+    border: 5px solid #3D3D3D;
+    margin-right: 85px;
+    margin-left: 85px;
+    position: relative;
+    top: -100px;
+}
+
+#blockach i{
+    width: 10px;
+    height: 10px;
+}
+
+#blockach p,
+#blockach h1{
+    font-size: 19px;
+    font-family: 'Open Sans', sans-serif;
+
+    color: #3D3D3D;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+    margin-top: 20px;
+}
+#blockach h1{
+    color: black;
+}
+
+.achievements, .achievements2{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.achievements p{
+    margin: 100px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    position: relative;
+
+    font-size: 27px;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+
+
+}
+
+#dos h1{
+    position: relative;
+    text-align: center;
+    font-size: 42px;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+
+}
+
+
+.achievements2 p{
+    margin: 60px;
+    margin-top: 10px;
+    position: relative;
+
+    font-size: 11px;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+
+}
+
+
+#menu {
+    display: flex;
+    align-items: center;
+}
+#menu p{
+    margin:   35px;
+    font-size: 19px;
+    color: #3D3D3D;
+}
+#menu p,
+#menu .separator {
+    margin-right:   100px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    color: #3D3D3D;
+}
+#menu .separator,
+#menu img {
+    margin-right:   600px;
+
+
+}
+
+#menu img{
+    position: relative;
+    top: 4px;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+}
+
+.separator span {
+    margin-right: 35px;
+    font-size: 19px;
+
+}
+.circle {
+    width: 5px;
+    height: 5px;
+    background-color: #3D3D3D;
+    border-radius: 50%;
+}
+
+
+
+.separator .main{
+    color: #6246EA;
+}

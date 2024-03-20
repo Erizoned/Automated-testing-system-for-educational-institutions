@@ -1,0 +1,25 @@
+{% extends 'Quiz/dependencies.html' %}
+{% load quiz_extras %}
+{% load static %}
+{% block content %}
+<head>
+     <link rel="stylesheet" href="{% static 'styles/vsa.css' %}">
+</head>
+     <h1>Student's Answers: "{{ student.username }}" to test: {{ test.title }}</h1>
+
+    {% for result in user_results %}
+        <div class="attempt">
+            <h2>Attempt from: {{ result.date_taken }}</h2>
+            {% for question in questions %}
+                <div class="question-answer">
+                    <p><strong>Question:</strong> {{ question.question }}</p>
+                    <p><strong>Student's Answers:</strong> {{ result|get_answer_for_question:question }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% empty %}
+        <div class="no-results">
+            <p>No results.</p>
+        </div>
+    {% endfor %}
+{% endblock %}

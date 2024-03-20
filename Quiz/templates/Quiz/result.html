@@ -1,0 +1,22 @@
+{% extends 'Quiz/dependencies.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'styles/result.css' %}">
+</head>
+<div class="container">
+  <div class="title">
+
+     <h1 class="card-title">Score: {{user_result.score}}</h1>
+      <p> test complete!</p>
+  </div>
+    <div class="state">
+         <p class="card-text">Percentage: {{percent}}%</p>
+          <p class="card-text">Time Taken: {{user_result.time_taken}} seconds</p>
+          <p class="card-text">Correct answers: {{correct}}</p>
+          <p class="card-text">Incorrect answers: {{wrong}}</p>
+          <p class="card-text">Total questions: {{total}}</p>
+    </div>
+</div>
+  </div>
+{% endblock %}

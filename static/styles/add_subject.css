@@ -1,0 +1,48 @@
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #FFFFFF;
+            color: #3D3D3D;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            font-family: 'Peace Sans', sans-serif;
+            color: #6246EA;
+        }
+
+        form {
+            background-color: #F0F0F0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label, input, button {
+            font-family: 'Open Sans', sans-serif;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #DDD;
+            border-radius: 4px;
+            box-sizing: border-box; /* Добавляет padding к общей ширине элемента */
+        }
+
+        button {
+            background-color: #6246EA;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #5740D9;
+        }
+
